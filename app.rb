@@ -34,4 +34,4 @@ end
 # now figure out cases
 # if what is being passed in the map is an upcase, do upcase return. if not then not
 
-print cypher("Zygotes are cells I think", 2)
+print cypher("What a string!", 5)
