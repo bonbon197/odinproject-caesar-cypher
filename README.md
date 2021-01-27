@@ -90,11 +90,14 @@ end
 ```
 
 Hopefully I can illustrate the logic better with this flow
+
+```
 => phrase = `"zygote"`
 => shift factor = `2`
 => index numbers are as follows when crossed with the letters array: `25, 24, 6, 14, 19, 4`
 => index + shift factor: `27, 26, 8, 14, 19, 4`
 => (index + shift) - letters.length: `1, 0, -18, -12, -7, -22`
+```
 
 Negative indeces count backwards from the last item in the array, so `letters[-18]` gives us the letter "i", which is two steps to the right of the letter "g", in line with what we've set as the shift factor.
 
