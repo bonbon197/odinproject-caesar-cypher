@@ -5,14 +5,14 @@
 So first off let's define a method that will accept two parameters, the input phrase and the number shift
 In our case, we'll name it "cypher".
 
-```
+```ruby
 def cypher (phrase, shift)
 end
 ```
 For now let's prepare what we'll possibly need for our operations
 We'll make an array for each letter in the alphabet, in lower case, that will serve as a reference for our cypher later.
 
-```
+```ruby
 def cypher (phrase, shift)
   letters = ("a".."z").to_a
 end
@@ -20,7 +20,7 @@ end
 
 Then another array, that is converted from the phrase that was passed as a parameter for the method.
 
-```
+```ruby
 def cypher (phrase, shift)
   letters = ("a".."z").to_a
   phrase_to_array = phrase.chars
@@ -34,7 +34,7 @@ Now we move on over to the actual logic and operation for the cypher.
 
 Since we converted the phrase into an array, we can do a \#map method on it.
 
-```
+```ruby
 def cypher (phrase, shift)
   letters = ("a".."z").to_a
   phrase_to_array = phrase.chars
@@ -47,7 +47,7 @@ end
 For each character in the phrase, we'll cross reference it with the letters array to see if it's there, using an if else.
 This is to avoid throwing off the code when you pass in a special character like spaces or "!" or "?".
 
-```
+```ruby
 def cypher (phrase, shift)
   letters = ("a".."z").to_a
   phrase_to_array = phrase.chars
@@ -59,7 +59,7 @@ end
 
 Once we've confirmed that's working, we add the shhift value.
 
-```
+```ruby
 def cypher (phrase, shift)
   letters = ("a".."z").to_a
   phrase_to_array = phrase.chars
@@ -71,7 +71,7 @@ end
 
 With this, it has pretty much covered the basic outcome we want.
 
-```
+```ruby
 print cypher("dogs", 2) 
 => fqiu
 ```
@@ -79,7 +79,7 @@ print cypher("dogs", 2)
 However, logic right now doesn't cover wrapping from z to a and beyond.
 What we'll do is subtract the current index value from the `letters[(letters.find_index(char)) + shift]` with the total length of the letters array, which in this case is 26. The total number of all letters in the alphabet. Hopefully you see where I'm going with this.
 
-```
+```ruby
 def cypher (phrase, shift)
   letters = ("a".."z").to_a
   phrase_to_array = phrase.chars
@@ -104,7 +104,7 @@ The last item left in the requirements is to check the cases so we could keep th
 
 For this, I simply wrapped it in an if else statement, to check if what was inputted were either in upper case or lower case.
 
-```
+```ruby
 def cypher (phrase, shift)
     letters = ("a".."z").to_a
     phrase_to_array = phrase.chars
